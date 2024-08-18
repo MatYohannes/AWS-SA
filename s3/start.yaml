@@ -1,0 +1,7 @@
+tasks:
+  - name: "node js"
+    before: |
+      pip install node js
+  - name: cdk
+    before: |
+      npm install -g aws-cdk

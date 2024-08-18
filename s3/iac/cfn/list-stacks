@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "== list complete stacks"
+# List stack names and count them
+stack_names=$(aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query 'StackSummaries[*].StackName' --output text)
+
+# Check if there are any stacks
+if [ -z "$stack_names" ]; then
+    echo "No stacks found."
+else
+    # Print the stack names
+    echo "Stack names:"
+    echo "$stack_names"
+fi

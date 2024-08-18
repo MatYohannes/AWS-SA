@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A simple s3 bucket
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    # If bucket name is not specified, AWS generates a random bucket name
+

@@ -3,15 +3,16 @@ In Windows PowerShell, you can set environment variables using the following syn
 
 - powershell
     env AWS_CLI_AUTO_PROMPT="on-partial"
--bash
+- bash
     export AWS_CLI_AUTO_PROMPT="on-partial"
-
-#CLI Commands
-aws s3api list-buckets --query 'Buckets[].Name' --ouput table (table or text)
 
 To check if user is connected to aws:
 aws sts get-caller-identity
 
+#CLI Commands
+aws s3api list-buckets --query 'Buckets[].Name' --ouput table (table or text)
+
 ## Creating S3 Bucket
 line below is for terminal, creating new bucket called "my-new-bucket-myy"
-./s3/bash-scripts/create-bucket my-new-bucket-myy  
+./s3/bash-scripts/create-bucket my-new-bucket-myy 
+

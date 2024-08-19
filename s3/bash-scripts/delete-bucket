@@ -7,6 +7,9 @@ if [ -z "$1" ]; then
 fi
 
 BUCKET_NAME=$1
+
+# Delete objects first from bucket
+./delete-objects $BUCKET_NAME
 # https://docs.aws.amazon.com/cli/lastest/reference/s3api/create-bucket.html
 aws s3api delete-bucket \
 --bucket $BUCKET_NAME

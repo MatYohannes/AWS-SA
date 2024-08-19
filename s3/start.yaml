@@ -5,3 +5,6 @@ tasks:
   - name: cdk
     before: |
       npm install -g aws-cdk
+  - name: utils
+    before: |
+      sudo apt-get install tree

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+echo "== get-object"
+
+# Check for bucket name
+if [ -z "$1" ]; then
+  echo "There needs to be a bucket."
+  exit 1
+fi
+
+# Check for filename
+if [ -z "$2" ]; then
+    echo "There needs to be a filename to download."
+  exit 1
+fi
+
+BUCKET_NAME=$1
+FILENAME=$2
+
+OBJECT_KEY=$(basename "$FILENAME")
+
+aws s3api get-object --bucket $BUCKET_NAME --key $FILENAME ./$FILENAME

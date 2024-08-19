@@ -2,6 +2,7 @@ from s3.sdk.python.s3 import *
 
 
 def main():
+    global bucket_name
     show_menus()
     operation = int(input("User selection: "))
 

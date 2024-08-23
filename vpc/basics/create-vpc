@@ -2,10 +2,16 @@
 
 set -e
 
+if [ -z "$1" ]; then
+  echo "Argument not provided. Provide VPC_NAME"
+else
+  export VPC_NAME="$1"
+fi
+
 ## Create a VPC
 VPC_ID=$(aws ec2 create-vpc \
 --cidr-block "172.1.0.0/16" \
---tag-specifications 'ResourceType=vpc,Tags=[{Key=Name,Value=my-create-vpc-082224}]' \
+--tag-specifications "ResourceType=vpc,Tags=[{Key=Name,Value=$VPC_NAME}]" \
 --region us-west-1 \
 --query Vpc.VpcId \
 --output text)
